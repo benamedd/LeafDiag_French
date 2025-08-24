@@ -1,0 +1,450 @@
+/* ===== LEAFDIAG AI - CLEAN & SIMPLE STYLING ===== */
+
+:root {
+  /* Brand Colors */
+  --primary-color: #2E7D32;
+  --primary-light: #4CAF50;
+  --primary-dark: #1B5E20;
+  --secondary-color: #FF6F00;
+  
+  /* Status Colors */
+  --success-color: #4CAF50;
+  --warning-color: #FF9800;
+  --danger-color: #F44336;
+  --info-color: #2196F3;
+  
+  /* Neutral Colors */
+  --white: #FFFFFF;
+  --light-gray: #F8F9FA;
+  --gray: #E0E0E0;
+  --dark-gray: #424242;
+  --black: #212121;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.15);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.2);
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+}
+
+/* ===== GLOBAL STYLES ===== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: var(--black);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: var(--spacing-lg);
+}
+
+/* ===== HEADER ===== */
+
+header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--spacing-sm);
+}
+
+header p {
+  font-size: 1.25rem;
+  color: var(--dark-gray);
+  font-weight: 400;
+}
+
+/* ===== UPLOAD SECTION ===== */
+
+.upload-section {
+  max-width: 600px;
+  margin: 0 auto var(--spacing-xl) auto;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+}
+
+.file-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  border: 2px dashed var(--gray);
+  border-radius: var(--radius-lg);
+  background: var(--light-gray);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: var(--spacing-lg);
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--dark-gray);
+}
+
+.file-label:hover {
+  border-color: var(--primary-color);
+  background: rgba(46, 125, 50, 0.05);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.file-label i {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
+  transition: transform 0.3s ease;
+}
+
+.file-label:hover i {
+  transform: scale(1.1);
+}
+
+#file {
+  display: none;
+}
+
+/* ===== BUTTONS ===== */
+
+button {
+  padding: var(--spacing-md) var(--spacing-xl);
+  margin: 0 var(--spacing-sm);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+#analyze-btn {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+  color: var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+#analyze-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+#analyze-btn:disabled {
+  background: var(--gray);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: var(--shadow-sm);
+}
+
+#refresh-btn {
+  background: var(--white);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  box-shadow: var(--shadow-sm);
+}
+
+#refresh-btn:hover {
+  background: var(--primary-color);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ===== RESULT SECTION ===== */
+
+.result-section {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.result-success {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.result-success h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: start;
+}
+
+.result-image {
+  text-align: center;
+}
+
+.result-image h4 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--dark-gray);
+  margin-bottom: var(--spacing-md);
+}
+
+#result-canvas {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--gray);
+}
+
+.result-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.metric {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md);
+  background: var(--light-gray);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--primary-color);
+}
+
+.metric-label {
+  font-weight: 500;
+  color: var(--dark-gray);
+}
+
+.metric-value {
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.metric-value.healthy { color: var(--success-color); }
+.metric-value.mild { color: var(--warning-color); }
+.metric-value.moderate { color: var(--secondary-color); }
+.metric-value.severe { color: var(--danger-color); }
+
+.diagnosis {
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  margin-top: var(--spacing-md);
+  text-align: center;
+  font-weight: 500;
+}
+
+.diagnosis-healthy {
+  background: rgba(76, 175, 80, 0.1);
+  border: 1px solid var(--success-color);
+  color: var(--success-color);
+}
+
+.diagnosis-mild {
+  background: rgba(255, 152, 0, 0.1);
+  border: 1px solid var(--warning-color);
+  color: var(--warning-color);
+}
+
+.diagnosis-moderate {
+  background: rgba(255, 111, 0, 0.1);
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.diagnosis-severe {
+  background: rgba(244, 67, 54, 0.1);
+  border: 1px solid var(--danger-color);
+  color: var(--danger-color);
+}
+
+.result-error {
+  background: rgba(244, 67, 54, 0.1);
+  border: 1px solid var(--danger-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  text-align: center;
+}
+
+.result-error h3 {
+  color: var(--danger-color);
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+.result-error p {
+  color: var(--danger-color);
+  font-size: 1.125rem;
+}
+
+/* ===== STATUS INDICATOR ===== */
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: rgba(46, 125, 50, 0.1);
+  border: 1px solid rgba(46, 125, 50, 0.3);
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  margin-top: var(--spacing-md);
+}
+
+/* ===== LOADING ANIMATION ===== */
+
+.loading {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(46, 125, 50, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--primary-color);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===== INSTALL BUTTON (PWA) ===== */
+
+.install-btn {
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #FFB74D 100%);
+  color: var(--white);
+  margin-top: var(--spacing-md);
+  font-size: 0.875rem;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media (max-width: 768px) {
+  body {
+    padding: var(--spacing-md);
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+  }
+  
+  header p {
+    font-size: 1rem;
+  }
+  
+  .upload-section {
+    padding: var(--spacing-lg);
+  }
+  
+  .file-label {
+    min-height: 150px;
+    font-size: 1rem;
+  }
+  
+  .file-label i {
+    font-size: 2.5rem;
+  }
+  
+  .result-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  button {
+    display: block;
+    width: 100%;
+    margin: var(--spacing-sm) 0;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: var(--spacing-lg);
+  }
+  
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  .file-label {
+    min-height: 120px;
+  }
+  
+  .metric {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+  }
+}
+/* ===== FIX IMAGE CENTERING ===== */
+
+#preview, 
+#canvasOutput, 
+#result-canvas {
+  display: block;
+  margin: 0 auto;               /* Centre horizontalement */
+  max-width: 90%;               /* Adapte à l'écran */
+  height: auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--gray);
+}
+
+/* Centrage global de la section résultat */
+.result-section {
+  text-align: center;
+  margin-top: var(--spacing-xl);
+}
